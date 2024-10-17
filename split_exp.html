@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
+    <link rel="stylesheet" href="../css/split_exp.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Splitter</h1>
+        <form id="splitter-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <input type="text" id="members" placeholder="Enter Member Names (comma separated)" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="split-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Expense</th>
+                        <th>Amount</th>
+                        <th>Members</th>
+                        <th>Each Pays</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="split-table-body"></tbody>
+            </table>
+        </div>
+
+        <div class="actions">
+            <button id="clear-all">Clear All</button>
+        </div>
+
+        <div class="summary">
+            <h2>Total Expenses: ₹<span id="total-expense">0</span></h2>
+        </div>
+    </div>
+
+    <script src="split_exp.js"></script>
+</body>
+</html>
