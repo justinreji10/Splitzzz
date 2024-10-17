@@ -1,0 +1,104 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Navbar */
+.navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Features Section */
+.features {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Feature Cards */
+.feature-card {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.feature-card h3 {
+    margin-top: 0;
+}
+
+.feature-card p {
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
