@@ -3,22 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Login Page</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>Home - Personal Finance Manager</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 20px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .center-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .center-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .center-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+    <div class="sidebar">
+        <h1>Features</h1>
+        <ul>
+            <li><a href="exp_tracker.html">Expense Tracker</a></li>
+            <li><a href="#">Budgeting Tools</a></li>
+            <li><a href="split_exp.html">Expense Splitter</a></li>
+            <li><a href="#">Recurring Expenses</a></li>
+            <li><a href="#">Financial Goals</a></li>
+        </ul>
+    </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+    <div class="center-content">
+        <h2>Join Our Community</h2>
+        <p>Connect with others, share financial tips, and achieve your goals together. Our forum is a place to learn, share, and grow financially.</p>
+        <a href="login.html?redirect=community" class="btn">Join the Community</a>
 
-            <a href="./index.html">Login</a>
-            
-        </form>
     </div>
 </body>
 </html>
