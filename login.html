@@ -3,88 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Personal Finance Manager</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <title>Login - Personal Finance Manager</title>
+    <link rel="stylesheet" href="../css/login.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: row;
+        /* Basic Reset */
+        body, h1, form {
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
         }
 
-        .sidebar {
-            width: 25%;
-            background-color: #f2f2f2;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            height: 100vh;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar li {
-            margin: 20px 0;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2em;
-        }
-
-        .center-content {
-            flex-grow: 1;
+        body {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 50px;
-        }
-
-        .center-content h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .center-content p {
-            font-size: 1.2em;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #007BFF;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: white;
-            padding: 10px 20px;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .login-container label {
+            display: block;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
             border-radius: 5px;
+            outline: none;
+        }
+
+        .login-container input:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .login-container button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            display: none;
+            color: #ffcccc;
+            margin-top: 10px;
+        }
+
+        .footer-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer-link a {
+            color: #add8e6;
             text-decoration: none;
-            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Features</h1>
-        <ul>
-            <li><a href="exp_tracker.html">Expense Tracker</a></li>
-            <li><a href="#">Budgeting Tools</a></li>
-            <li><a href="split_exp.html">Expense Splitter</a></li>
-            <li><a href="#">Recurring Expenses</a></li>
-            <li><a href="#">Financial Goals</a></li>
-        </ul>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <p class="error-message" id="error-msg">Invalid username or password.</p>
+        </form>
+        <div class="footer-link">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
     </div>
 
-    <div class="center-content">
-        <h2>Join Our Community</h2>
-        <p>Connect with others, share financial tips, and achieve your goals together. Our forum is a place to learn, share, and grow financially.</p>
-        <a href="login.html?redirect=community" class="btn">Join the Community</a>
+    <script>
+        // Login validation (basic example)
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    </div>
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Dummy validation for illustration purposes
+            if (username === 'user' && password === 'password') {
+                // Redirect to community page
+                window.location.href = './index.html';
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        });
+
+        // Check if redirected from "Join Community"
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('redirect') && urlParams.get('redirect') === 'community') {
+                alert('Please log in to access the community forum.');
+            }
+        });
+    </script>
 </body>
 </html>
