@@ -5,65 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Personal Finance Manager</title>
     <link rel="stylesheet" href="../css/index.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 20px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .center-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .center-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .center-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-    <header class="navbar">
-        <h1>Personal Finance Manager</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="expense_tracker.html">Expense Tracker</a></li>
-                <li><a href="#">Budgeting Tools</a></li>
-                <li><a href="#">Expense Splitter</a></li>
-                <li><a href="#">Community Forum</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="sidebar">
+        <h1>Features</h1>
+        <ul>
+            <li><a href="exp_tracker.html">Expense Tracker</a></li>
+            <li><a href="#">Budgeting Tools</a></li>
+            <li><a href="split_exp.html">Expense Splitter</a></li>
+            <li><a href="#">Recurring Expenses</a></li>
+            <li><a href="#">Financial Goals</a></li>
+        </ul>
+    </div>
 
-    <main class="features">
-        <h2>Explore Our Tools</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>Expense Tracker</h3>
-                <p>Track all your expenses easily and stay on top of your spending.</p>
-                <a href="exp_tracker.html" class="btn">Open Tracker</a>
-            </div>
+    <div class="center-content">
+        <h2>Join Our Community</h2>
+        <p>Connect with others, share financial tips, and achieve your goals together. Our forum is a place to learn, share, and grow financially.</p>
+        <a href="login.html?redirect=community" class="btn">Join the Community</a>
 
-            <div class="feature-card">
-                <h3>Budgeting Tools</h3>
-                <p>Create monthly budgets and receive alerts when you're close to your spending limits.</p>
-                <a href="#" class="btn">Try Budgeting</a>
-            </div>
-
-            <div class="feature-card">
-                <h3>Expense Splitter</h3>
-                <p>Split bills with friends and manage shared expenses hassle-free.</p>
-                <a href="split_exp.html" class="btn">Use Expense Splitter</a>
-            </div>
-
-            <div class="feature-card">
-                <h3>Recurring Expenses</h3>
-                <p>Manage your subscriptions and recurring bills efficiently.</p>
-                <a href="#" class="btn">Manage Subscriptions</a>
-            </div>
-
-            <div class="feature-card">
-                <h3>Community Forum</h3>
-                <p>Connect with others to share tips, advice, and financial goals.</p>
-                <a href="#" class="btn">Join Community</a>
-            </div>
-
-            <div class="feature-card">
-                <h3>Financial Goals</h3>
-                <p>Set savings goals and monitor your progress with insightful reports.</p>
-                <a href="#" class="btn">Set a Goal</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Personal Finance Manager. All rights reserved.</p>
-    </footer>
+    </div>
 </body>
 </html>
